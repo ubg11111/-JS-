@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+<script>
+
+// 클로저 이해하기
+// 선행학습으로는 호이스팅과 변수선언(지역변수,전역변수의 차이) 함수선언, 함수표현식 인터프린트언어 방식의 이해도가 필요함.
+// Closure의 정의 : 함수와 렉시컬 환경의 조합 
+//                  함수가 생성될 당시의 외부 변수를 기억 생성 이후에도 계속 접근이 가능.
+
+function makeCounter(){
+    let num = 0; // 은닉화
+
+    return function(){
+        return num++;
+    };
+}
+
+let counter = makeCounter();
+
+// 아래 숫자들은 수정이 불가능하다.
+console.log(counter()); // 0
+console.log(counter()); // 1
+console.log(counter()); // 2 
+
+
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+<script>
+
+// Switch 반복문
+// 하나의 조건문을 여러 케이스로 작성할 수 있다.
+// 다만 단점으로는 한 조건에 의해서만 여러 케이스를 작성가능하기에 다른 조건에 의한 케이스는 작성이 불가능하다.
+// 장점으로는 한 조건에 다양한 케이스로 활용하여 코드가 간편해진다.
+// switch문의 경우 조건문 만족시 아래 조건문도 같이 실행하기에 한 조건이 만족하는 조건부에 반드시 break문을 넣어 탈출시켜줘야한다.
+
+// 사과 100원, 바나나 200원 , 키위 300원 , 멜론 500원 , 수박 500원  사고싶은 과일을 물어보고 가격 알려주기
+
+let fruit = prompt("무슨 과일을 사고 싶으세요?");
+
+switch(fruit){
+
+    case "사과":
+        alert("사과의 가격은 100원 입니다.")
+        break;
+    case "바나나":
+        alert("바나나의 가격은 200원 입니다.")
+        break;
+    case "키위":
+        alert("키위의 가격은 300원 입니다.")
+        break;
+    case "멜론":
+        alert("멜론의 가격은 500원 입니다.")
+        break;
+    case "수박":
+        alert("수박의 가격은 500원 입니다.")
+        break;
+    default:
+        alert("찾으시는 과일은 없습니다" )
+        break;
+}
+
+
+</script>
+
+</body>
+</html>

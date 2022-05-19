@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+<script>
+
+// 심볼(Symbol 숨긴 프로퍼티)
+
+// 다른개발자가 만들어 놓은 객체
+const user = {
+
+    name : "Mike",
+    age : 30,
+
+};
+
+// 내가 작업
+// user.showName = function(){}; 이상한 메시지를 보게됨.   
+
+// 심볼넣어서 작업하기
+const showName = Symbol('show name');
+user[showName] = function(){
+    console.log(this.name);
+}; 
+
+// 위와같이 심볼로 처리하는경우 메시지가 숨김처리되지만
+// 아래와 같이 함수를 사용하는경우 메시지가 다시 보여지게 된다.
+user[showName]();
+
+// 사용자가 접속하면 보는 메시지
+for(let key in user){
+    console.log(`His ${key} is ${user[key]}.`)
+}
+
+
+</script>
+
+</body>
+</html>

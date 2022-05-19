@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+<script>
+
+    // 1 ~ 100 사이 임의의 숫자를 뽑고 싶다면?
+    // Math.random()
+    // 해당값에 +1을 더해주는것은 0부터시작하는것을 방지하기 위해서다.
+    let randomSu = Math.floor(Math.random() * 100 ) + 1 
+    console.log(randomSu);
+
+    // max, min 최소값 최대값을 구해준다.
+    let maxSu = Math.max(1,4,5,6,7,8,9,10);
+    let minSu = Math.min(-1,2,3,4,5,6,8);
+    console.log(`최대값 : ${maxSu}`);
+    console.log(`최소값 : ${minSu}`);
+
+    // 소수점 자릿수를 편하게 가져오는 toFixed() 메서드
+    let userRate = 30.32323;
+    console.log(userRate.toFixed(2)); // 소수점 두자릿수까지만 뽑아온다
+    // 만약 0인경우 30의 정수값을 , 현재 정의된 소수값보다 큰경우엔 빈자리에 0을 채워준다.
+
+    // NaN을 체크해주는 메서드 isNaN()
+    let x = Number('x'); // NaN
+
+    // 전부 똑같지 않다고 값이 출력된다.
+    x == NaN // false
+    x === NaN // false
+    NaN === NaN // false 
+
+    isNaN(x) // true
+    isNaN(3) // false
+
+    // 문자열을 숫자(정수)로 바꿔주는 메서드 perseInt()
+    let margin = '10px';
+    perseInt(margin); // 10
+    Number(margin) // NaN
+
+    let redColor = 'f3';
+    parseInt(redColor); // NaN
+
+
+    // 문자열을 소수점으로 바꿔주는 메서드 parseFloat()
+    let padding = '18.5%';
+    parseInt(padding); // 18 정수값을 반환
+    parseFloat(padding); // 18.5 부동소수점을 반환한다
+
+    // Math.abs(): 절대값
+    Math.abs(-1) // 정수값 1을 무저건 반환
+
+
+</script>
+
+
+</body>
+</html>

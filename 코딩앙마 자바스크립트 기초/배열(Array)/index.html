@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+<script>
+    // 배열
+    let days = ['월요일', '화요일', '수요일']
+
+    console.log(days);
+
+    // 반복문을 통해서 배열의 길이.length 만큼 조건문을 할당하고 값을 방법
+    for(let i=0; i<days.length; i++){
+        console.log(days[i]);
+    }
+
+
+    // push를 통해 배열의 뒤에 데이터를 한개씩 추가해줄 수 있다.
+    days.push('목요일');
+    console.log(days);
+    // pop를 통해 배열의 뒤에 데이터를 한개씩 지워줄 수 있다.
+    days.pop();
+    console.log(days);
+
+    // unshift를 통해 배열의 맨 앞에 값을 추가해 줄 수 있다.
+    days.unshift("일요일");
+    console.log(days);
+    
+    // shift를 통해 배열의 맨 앞에 값을 지워줄 수 있다.
+    days.shift();
+    console.log(days);
+
+
+</script>
+
+</body>
+</html>

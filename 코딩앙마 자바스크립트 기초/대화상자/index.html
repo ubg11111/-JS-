@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+<script>
+
+
+    // 아래 기본제공하는 대화상자의 경우 단점
+    // 1. 스크립트 화면이 일시 정지
+    // 2. 스타일링 X (디자인 꾸미기가 안됨)
+
+    // 입력창
+    const name = prompt("이름을 입력하세요.", "유병권");
+    
+    // 알림창
+    alert(`어서오세요 ${name}님`);
+
+    // 확인창
+    const isAdult = confirm("당신은 성인 입니까?");
+    if(isAdult == true){
+        alert("당신은 성인 입니다.")
+    }else{
+        alert("당신은 성인이 아닙니다.")
+    }
+
+
+</script>
+</body>
+</html>

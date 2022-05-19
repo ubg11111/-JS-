@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+<script>
+
+let n = "name";
+let a = "age";
+
+
+const user = {
+    // 계산된 프로퍼티(computed property)
+    [n] : 'Mike',
+    [a] : 30,
+    [1+4] : 5, // 계산식도 가능
+};
+
+console.log(user);
+
+
+function makeObj(key, val){
+    return {
+        [key] : val
+    }
+}
+
+const obj = makeObj('이름', '홍길동');
+console.log(obj);
+
+
+const user2 = {
+    name: "Mike",
+    age: 30,
+};
+
+
+// 모두 하나의 객체를 바라보기에 (user2) user3을 변경해도 user2도 함께 데이터가 변경된다(주소값이 같음)
+const user3 = Object.assign({},user2); // 객체를 복사
+
+user3.name = "Tom";
+
+console.log(user2); // 기존 객체의 주소값을 사용하고
+console.log(user3); // 객체의 복사된 새로운 주소값을 사용한다.
+
+
+// user2의 오브젝트의 프로퍼티 키값만 출력이 가능.
+const result = Object.keys(user2);
+
+console.log(result);
+
+
+// 오브젝트 배열
+
+let arr = [
+
+    ['mon', '월'], // 키 벨류값을 배열형태로 저장
+    ['tue', '화'],
+
+];
+
+// 배열을 전달한다 (배열객체를 생성)
+const result2 = Object.fromEntries(arr);
+console.log(result2);
+
+
+
+let people = {
+    
+    name : '홍길동',
+    age : 30, 
+};
+
+const person = Object.assign({}, people); 
+// {}빈객체는 초기값을 할당함 두번째로 들어온 매개변수가 초기값으로 병합되어 객체가 생성
+// {} <--- {name : 홍길동 , age : 30};
+
+person.name = "유병권";
+person.age = 25;
+
+console.log(people);
+console.log(person);
+
+
+
+</script>
+
+</body>
+</html>

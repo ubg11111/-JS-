@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+<script>
+
+    // var let const의 차이점
+    // var는 한번 선언된 변수를 다시 선언할 수 있다.
+
+    var su = 1;
+    var su = 2;
+    console.log(su); 
+
+    // let은 한번 선언된 변수를 다시 선언할 수 없다.
+    // let name = 'hong';
+    // let name = 'llll'; Error 발생
+
+    // 호이스팅 : 스코프 내부 어디서든 변수 선언은 최상위에 선언된 것 처럼 행동한다
+    
+
+    // 변수의 생성과정
+    // 1. 선언단계
+    // 2. 초기화단계
+    // 3. 할당단계
+    // var = 선언민 초기화 단계 후 할당
+    // let = 선언 단계 초기화 단계 후 할당
+    // const = 선언 + 초기화 + 할당 동시진행
+
+    // 스코프
+    // var : 함수 스코프 (어디서든 호출이 가능함)
+    // let,const : 블록 스코프 (함수내부에서 실행하면 외부 실행불가)
+
+    // var 함수스코프 예시
+    const age = 30;
+    if(age > 19){
+        var txt = '성인'; 
+        // 블록스코프가 아닌 함수스코프는 외부에서도 변수사용 호출이 가능하다
+        // 상위 코드가 let 또는 const인경우 블록스코프에 해당하기에 외부에서 호출이 불가능하다.
+        // 즉 블록스코프는 전역변수와 지역변수의 역할이 확실하게 구분되어 있다.
+    }
+    console.log(txt);
+
+    // var가 함수 내부에서 선언되는경우 외부에서 호출시 오류를 발생
+    function add(num1, num2){
+        var result = num1 + num2;
+    }
+    add(1+2);
+    console.log(result); // 에러 발생
+
+</script>
+
+</body>
+</html>
