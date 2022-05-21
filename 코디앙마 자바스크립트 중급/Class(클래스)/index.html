@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+<script>
+
+// Class(설계도)
+// ES6 추가된 스펙
+
+// 기존 생성자함수를 통한 객체 생성
+const User = function(name,age){
+  this.name = name;
+  this.age = age;
+  // this.showName = function(){
+  //   console.log(this.name);
+  // };
+}
+
+User.prototype.showName = function(){
+  console.log(this.name);
+}
+
+// 프로토타입 객체와 클래스의 차이는
+// 프로토타입 객체는 new 키워드없이도 값에 문제가 없지만
+// class타입의 객체는 new 키워드로 객체를 생성하지 않으면 오류가발생한다.
+const mike = new User("Mike", 30);
+
+
+// class User2의 객체를 생성
+class User2{
+
+  constructor(name,age){
+    this.name = name;
+    this.age = age;
+  }
+
+  showName(){
+    console.log(this.name);
+  }
+}
+
+// 참조변수 tom에 User2객체를 생성 및 인자값을 전달 후 저장
+const tom = new User2("Tom", 30);
+
+console.log(mike);
+console.log(tom);
+
+// Class 타입의 상속에대해서 알아보기
+// extends 확장
+
+class car{
+  constructor(color){
+    this.color = color;
+    this.wheels = 4;
+  }
+
+  drive() {
+    console.log("dirve...");
+  }
+
+  stop(){
+    console.log("STOP!!!");
+  }
+
+
+
+}
+
+// car 부모 객체의 멤버를 상속받는다
+class Audi extends car{
+
+  // 생성자 함수를 통한 오버라이딩
+  // 부모의 생성자함수를 상속받는다
+  constructor(color){
+    super(color);
+    this.navigation = 1;
+  }
+
+  auto(){
+    console.log("자동운전을 진행합니다.");
+  }
+
+  // 같은 이름의 메서드를 재정의한다 (오버라이딩)
+  stop(){
+    // 부모의 메서드를 상속받는다 super 키워드를 사용
+    super.stop();
+    console.log("OFF");
+  };
+
+
+  
+}
+
+const a5 = new Audi("red");
+
+console.log(a5);
+console.log(a5.drive());
+console.log(a5.navigation);
+
+// 메서드 오버라이딩
+// 오버라이딩은 추상화(구현부가없는 메서드)된 메서드를 재정의하는것을 말한다.
+
+console.log(a5.stop());
+
+console.log(a5.navigation);
+
+</script> 
+</body>
+</html>
