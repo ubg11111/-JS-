@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+<script>
+
+// 형변환
+
+// 프롬프트로 입력받은 값은 문자형이기에 형변환을 해야만 숫자로 입력값을 계산할 수 있다.
+//const mathScore = parseInt(prompt("수학점수는 몇점임?"));
+//const engScore = parseInt(prompt("영어점수는 몇점임?"));
+//const result =  (mathScore + engScore) / 2;
+//console.log(result);
+
+
+// 명시적 형변환(문자형)
+console.log(
+String(3),
+String(true),
+String(false),
+String(undefined),
+String(null)
+);
+
+// 명시적 형변환(숫자형)
+console.log(
+    Number("1234"),
+    Number(true),
+    Number(false)
+)
+
+// 명시적 형변환(불린형)
+// false 값만 기억
+// 숫자 0 , 빈문자열 '' , null , undefined , nan 이외값은 모두 true값으로 반환
+console.log(
+    Boolean(0),
+    Boolean(''),
+    Boolean(null),
+    Boolean(undefined),
+    Boolean(NaN)
+    // false값으로 출력되는 사항
+)
+
+// 형변환의 주의사항 (버그예방 참고)
+console.log(
+
+    Number(0), // false = 이미 데이터값이 0이기때문에
+    Number('0'), // true = 문자'0'이 숫자0으로 반환이 가능하기에 true 반환
+
+    Number(''), // false = 빈문자열은 형변환이 불가능함
+    Number(' ') // true = 공백이 있는 문자열을 형변환이 가능함.
+);
+
+</script>
+
+</body>
+</html>

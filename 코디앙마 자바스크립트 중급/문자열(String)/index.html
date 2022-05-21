@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+<script>
+
+let list = [
+
+    "01. 들어가며",
+    "02. JS의 역사",
+    "03. 자료형",
+    "04. 함수",
+    "05. 배열",
+]
+
+let newList = [];
+
+for(let i=0; i<list.length; i++){
+    newList.push(
+        list[i].slice(4)
+    );
+}
+
+// slice(n,m) n부터m까지 출력할 수 있는 문자열 메서드 
+console.log(newList);
+
+
+// 금칙어 : 콜라
+// indexOf(0과 1을 반환)
+
+function hasCola(str){
+    if(str.indexOf('콜라') > -1){ // 0부터는 콜라가 포함되게끔
+        console.log("금칙어가 있습니다.")
+    }else{
+        console.log('통과')
+    }
+}
+
+hasCola('와 사이다가 짱이야!'); // -1 
+hasCola('무슨소리 콜라가 짱이야!'); // 0 
+hasCola('콜라'); // 0
+
+// includes
+// 문자가 있으면 true
+// 없으면 false를 반환
+
+// 금칙어 : 물고기
+
+function fish(str){
+
+    if(str.includes('물고기')){
+        console.log("금칙어가 있습니다.")
+    }else{
+        console.log('통과')
+    }
+}
+
+console.log("===============")
+
+fish("안녕 나는 사람이야"); // false
+fish("에이 니가 무슨 사람이야 물고기지"); // true
+
+
+</script>
+
+</body>
+</html>

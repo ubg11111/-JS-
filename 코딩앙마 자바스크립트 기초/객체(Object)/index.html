@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+<script>
+
+    // 자바스크립트 오브젝트 (객체 작성법)
+    const superman = {
+        // key와 value값으로 구성됨
+        // 각 프로퍼티는 쉼표로 구분한다.
+        name: "superman",
+        age: 20,
+        hobby: '운동하기',
+    }
+
+    // --접근방식--
+    // 객체.프로퍼티에 접근하는방법
+    console.log(superman.name);
+    // 객체['프로퍼티']에 접근하는방법
+    console.log(superman['age']);
+
+    // --추가방식--
+    superman.gender = "남자";
+    superman['hairColor'] = '파란색';
+    console.log(superman.gender);
+
+
+    // --삭제방식--
+    delete superman.hairColor;
+
+    // for...in 반복문을 통해 객체를 반복적으로 순회할 수 있다.
+
+    for(let key in superman){
+        console.log(key); // 해당 슈퍼맨 오브젝트의 키값만 출력
+        console.log(superman[key]) // 해당 슈퍼맨 오브젝트의 키값의 벨류값을 출력
+        // superman[key] >> 반복문은
+        // superman[name] , superman[age] , superman[hobby] 를 순서대로 반복하는것으로 보면 된다.
+    }
+
+
+    // 새로운 객체
+    function makeObject(name, age){
+        return{
+            name,
+            age,
+            hobby: "축구하기"
+        }
+    }
+
+    const Mike = makeObject("마이크", 30);
+    console.log(Mike['hobby']);
+
+    // in은 해당 오브젝트에 키값이 있는지 체크하는 여부를 Boolean으로 나타내주는 기능이다.
+    console.log('age' in Mike);
+    console.log('birthday' in Mike);
+
+    // 객체 in
+    function isAdult(user){
+        if(!('age' in user) || // user(파라미터)값안에 age가 없거나
+            user.age < 20){ // 20살 미만이면 false값을 반영한다
+            return false;
+        }else{
+            return true;
+        }
+    }
+    const Bang = {
+        name: "Bang",
+        age: 30,
+    }
+
+    const Tom = {
+        name: "Tom",
+    }
+    console.log(isAdult(Bang));
+
+
+</script>
+
+
+</body>
+</html>

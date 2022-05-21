@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+<script>
+
+const mike = {
+    name: "Mike",
+};
+
+const  tom = {
+    name: "Tom",
+}
+
+function showThisName(){
+    console.log(this.name);
+}
+
+// call : call메서드는 모든 함수에서 사용할 수 있으며, this를 특정값으로 지정할 수 있다.
+showThisName();
+showThisName.call(mike); 
+showThisName.call(tom);
+
+
+function update(birthYear, occupation){
+    this.birthYear = birthYear;
+    this.occupation = occupation;
+}
+
+update.call(mike,1999,'single');
+console.log(mike);
+
+// apply : apply는 함수 매개변수를 처리하는 방법을 제외하면 call과 완전히 같다.
+//          call은 일반적인 함수와 마찬가지로 매개변수를 직접 받지만, apply는 매개변수를 배열로 받는다.
+update.apply(tom,[1998,'teacher']);
+console.log(tom);
+
+// apply 활용하기
+let nums = [1,3,2,4,5,6];
+// let minNum = Math.min(...nums);
+// let maxNum = Math.max(...nums);
+
+const minNum = Math.min.apply(null, nums);
+// = Math.min.aplly(null, [1,3,2,4,5,6]) 배열로 받는형식
+
+const maxNum = Math.max.call(null, ...nums);
+// = Math.max.call(null, 1,3,2,4,5,6) 함수와 마찬가지로 매개변수를 직접받는 방식
+
+console.log(minNum);
+console.log(maxNum);
+
+// bind : 함수의 this값을 영구히 바꿀 수 있다.
+const updateMike = update.bind(mike);
+updateMike(1980, "police");
+console.log(mike);
+
+const user = {
+    name : "Mike",
+    showName: function (){
+        console.log(`hello, ${this.name}`);
+    },
+}
+
+user.showName();
+
+let fn = user.showName;
+
+fn(); // 함수만 호출하는경우 this문이 성립되지않는다.
+fn.call(user); // 이런경우 콜 메서드를 통해서 가져오면된다.
+
+let boundFn = fn.bind(user);
+
+boundFn(); // 원래 기본 함수만 호출하는 경우 this문이 성립되지 않지만. bind를 사용하는 경우 this문을 영구히 바꾸어 주기 때문에 값이 적용되어 호출
+
+
+</script>
+
+</body>
+</html>

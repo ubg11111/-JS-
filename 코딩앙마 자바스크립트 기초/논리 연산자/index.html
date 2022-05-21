@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+<script>
+
+    // 논리 연산자
+    
+    // OR( || ) 
+    // 여러개 중 한개라도  True값을 반환하는경우 True로 값을 반환
+    // 즉 모든 값이 False인 경우 false값을 나타냄
+
+    // AND(&&)
+    // 값비교에서 두값이 모두 True인경우 True값을 반환
+    // 즉 한가지 값이라도 False를 반환하는 경우 모든값을 False로 반환함
+
+    // !(NOT)
+    // True면 False값을 False값이면 True값으로 반환해주는 논리연산자
+
+    // 이름이 TOM 이고, 성인이면 통과
+    // let name = "Mike";
+    // let age = 30;
+
+    // if(name === "Tom" && age > 19){
+    //     console.log("통과");
+    // }else{
+    //     console.log("왜 옴?");
+    // }
+
+    // NOT 나이를 입력 받아 성인이 아니면 돌아가게끔 로직구성
+
+    // let age = parseInt(prompt("나이를 입력하세요"));
+    // let isAdult = age > 19;
+
+    // if(!isAdult){
+    //     alert("돌아가");
+    // }
+    
+    // 우선순위
+    // 남자이고, 이름이 Mike 이거나 성인이면 통과
+    const gender = 'F';
+    const name = 'Jane';
+    const isAdult = true;
+
+    if(gender === 'M' && name === "Mike" || isAdult){ 
+        // 괄호값에 우선순위지정에따라서 비교연산자또한 다르게 출력할 수 있다.
+        // ex) (gender === 'M' && name === "Mike") || isAdult >>> 결과값은 true
+        // ex) gender === 'M' && (name === "Mike" || isAdult) >>> 결과값은 false
+       
+        console.log("통과");
+    }else{
+        console.log('돌아가');
+    }
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+<script>
+
+// 생성자 함수
+
+function User(name, age){ // 생성자함수는 함수명 첫글자는 대문자료 표기한다.
+    this.name = name;
+    this.age = age;
+    this.sayName = function(){
+        console.log(this.name); // this는 .앞에 변수를 가리킨다. user5.name랑 같다
+    }
+}
+
+// User 객체를 각 3개생성 각각 주소값은 단일 주소값을 가진다
+let user1 = new User("Mike", 30);
+let user2 = new User("Tom", 20);
+let user3 = new User("Bang", 28);
+let user5 = new User("Han", 40);
+
+user5.sayName();
+
+
+// 상품 객체를 생성해 보자
+
+function Item(title,price){
+    // this = {}; // 생략
+    this.title = title;
+    this.price = price;
+    this.showPrice = function(){
+        console.log(`${this.title}의 가격은 ${this.price}원 입니다.`);
+    };
+    // return this; // 생략
+}
+
+let item1 = new Item('인형', 3000);
+let item2 = new Item('가방', 4000);
+let item3 = new Item('지갑', 5000);
+
+console.log(item1,item2,item3);
+item1.showPrice();
+item2.showPrice();
+item3.showPrice();
+
+
+
+</script>
+
+</body>
+</html>

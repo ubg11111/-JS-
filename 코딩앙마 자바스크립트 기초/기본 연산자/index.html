@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+ 
+
+<script>
+
+    // 자바스크립트 기본 연산자
+    let num = 10;
+    num *= 5; // num = num + 5;
+
+    console.log(num);
+
+    // 증가 연산자, 감소 연산자
+    let num1 = 10;
+    // num1++; // 증감 연산자
+    // num1--; // 감소 연산자
+
+    let result1 = ++num1; // 전위형증가연산자 1이증가된 상태로 값을 출력
+    let result2 = num1++; // 후위형증가연산자 본래값을 출력후 이후 출력시 1이증가됨
+    console.log(result1);
+    console.log(result2);
+    console.log(num1);
+
+
+    // 비교연산자
+    // 비교연산자는 항상 boolean값이다. (true or false)
+
+    console.log(10 > 5);
+    console.log(10 == 5); 
+    console.log(10 != 5);
+
+    // 동등연산자
+    const a = 1;
+    const b = "1";
+    console.log(a == b); // == 타입은 비교하지않음
+    console.log(a === b); // === 쓰는경우 타입까지 비교하기에 정확하다(일치연산자)
+
+    // 조건문
+
+    // if,else,else if
+    // 추가 요구사항:
+    // 19살이면 수능 잘치세요 라는 문구를 보여주세요.
+
+    let age = 10;
+
+    if(age > 19){
+        console.log("환영")
+    }else if(age === 19){
+        console.log("수능 잘 보세요")
+    }else{
+        console.log("안녕히 가세요")
+    }
+
+</script>
+</body>
+</html>

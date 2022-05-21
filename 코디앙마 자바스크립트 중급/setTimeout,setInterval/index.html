@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+<script>
+
+    // setTimeout : 일정 시간이 지난 후 함수를 실행.
+    // setInterval : 일정 시간 간격으로 함수를 반복 실행.
+    // clearTimeout() : 스케쥴링을 취소함.(시간이 지나기전에 미리 취소하는 작업)
+    // clearInterval() : setInterval 함수를 반복 실행하는 작업을 멈추는 메서드
+
+
+    let num = 0;
+
+    function showTime(){
+        console.log(`안녕하세요. 접속하신지 ${num++}초가 지났습니다.`);
+        
+        if(num > 5){
+            clearInterval(tId);
+        }
+    }
+
+    const tId = setInterval(showTime, 1000);
+
+
+</script>
+
+</body>
+</html>

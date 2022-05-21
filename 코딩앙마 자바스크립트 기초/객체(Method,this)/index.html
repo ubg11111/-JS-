@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+<script>
+
+    // method 객체 프로퍼티로 할당된 함수를 메소드라고 한다. 
+    // 또는 method는 클래스내부에서 작성된 함수라고도 표현을 한다.
+
+    let boy ={
+        name : "Mike",
+        showName: function(){
+            console.log(`제 이름은 ${this.name}입니다.`); // 여기서 this문은 해당객체를 가리킨다.
+        }
+    }
+    boy.showName();
+
+    // boy객체를  man이라는 변수에 삽입
+    let man = boy;
+    man.name = "Tom"; // man이라는 변수에 boy객체가 포함되어있기에 각 키값에 동일하게 접근이 가능하다.
+    console.log(boy.name);
+
+    man.showName();
+    boy = null; // boy라는 객체의 값이 null이 된다. 즉 boy.name에 접근이 불가능하다
+    
+    man.showName(); // 다만 boy객체에 this문으로 객체를 가리키면 name에 접근이 가능하다.
+
+    // 화살표 함수로 메서드를 작성하게 되면 this는 전역객체를 가리키게 된다
+    // 여기서 전역객체는 window를 가리킨다
+    let girl = {
+        name: 'IU',
+        showName: () =>{
+            console.log(`제 이름은 ${this.name} 입니다.`)
+        }
+    }
+    girl.showName();
+    
+
+</script>
+
+
+</body>
+</html>
