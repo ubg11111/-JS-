@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+<script>
+
+    // async,await 
+
+    // 앞에 async를 붙여주는 경우 해당함수는 항상 프로미스를 반환
+    // async function getName(){
+    //     // return "Mike";
+    //     return Promise.resolve("Tom");
+    //     //throw new Error("err...");
+    // }
+
+    // console.log(getName());
+    // getName().then(name =>{
+    //     console.log(name);
+    // }).catch((err) =>{
+    //     console.log(err);
+    // });
+
+    
+    function getName(name){
+        return new Promise((resolve, reject) => {
+            setTimeout(() => {
+                resolve(name);
+            }, 1000);
+        });
+    }
+
+
+    // await
+    // 프로미스가 처리될때까지 기다린다.
+    async function showName(){
+        const result = await getName("Mike");
+        console.log(result);
+    }
+
+    console.log("시작")
+    showName();
+
+
+
+</script>
+
+</body>
+</html>
